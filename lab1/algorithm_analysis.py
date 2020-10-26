@@ -4,10 +4,10 @@ import timeit
 class AlgoAnalysis:
 
     # counts amount of comparisons
-    insertion_sort_comparisons_count, heapsort_comparisons_count = 0, 0
+    insertion_sort_comparisons_count = heapsort_comparisons_count = 0
 
     # counts amount of swaps
-    insertion_sort_swaps_count, heapsort_swaps_count = 0, 0
+    insertion_sort_swaps_count = heapsort_swaps_count = 0
 
     @staticmethod
     def algorithm_time(algorithm_name: str):

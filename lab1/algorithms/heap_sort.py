@@ -36,7 +36,7 @@ def heap_sort(list_of_pumps):
         heapify(list_of_pumps, length, i)
 
     for i in range(length - 1, 0, -1):
-        AlgoAnalysis.insertion_sort_swaps_count += 1
+        AlgoAnalysis.heapsort_swaps_count += 1
         list_of_pumps[i], list_of_pumps[0] = list_of_pumps[0], list_of_pumps[i]
         heapify(list_of_pumps, i, 0)
     return list_of_pumps
