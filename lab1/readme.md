@@ -21,3 +21,5 @@
 1. Second step: `cd algorithms-labs-iot` and `cd lab1`
 1. Third step: **_enter to command line_** `python main.py`
 1. Fifth step: **_enter name of csv file_**
+
+![alt text](result.jpg)
