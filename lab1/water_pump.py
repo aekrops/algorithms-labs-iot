@@ -38,11 +38,11 @@ class Sort:
             while iteration >= 0 and selected_object.power_in_watts > list_of_pumps[iteration].power_in_watts:
                 list_of_pumps[iteration + 1] = list_of_pumps[iteration]
                 AlgoAnalysis.insertion_sort_comparisons_count += 2
-                AlgoAnalysis.insertion_sort_swaps_count += 1
+                AlgoAnalysis.insertion_sort_swaps_count += 0.5
                 iteration -= 1
             else:
                 list_of_pumps[iteration + 1] = selected_object
-                AlgoAnalysis.insertion_sort_swaps_count += 1
+                AlgoAnalysis.insertion_sort_swaps_count += 0.5
         return list_of_pumps
 
     @staticmethod
@@ -68,10 +68,9 @@ class Sort:
         return list_of_pumps
 
     @staticmethod
-    def swap(elem_index1: int, elem_index2: int, list_of_objects: list):
-        temp = list_of_objects[elem_index1]
-        list_of_objects[elem_index1] = list_of_objects[elem_index2]
-        list_of_objects[elem_index2] = temp
+    def swap(index1: int, index2: int, list_of_objects: list):
+        list_of_objects[index1], list_of_objects[index2] = list_of_objects[index2], list_of_objects[index1]
+        AlgoAnalysis.heapsort_swaps_count += 1
 
     @staticmethod
     def heapify(list_of_pumps, length, root):
@@ -81,10 +80,14 @@ class Sort:
 
         if left_child < length and list_of_pumps[max_value].liter_per_hour < list_of_pumps[left_child].liter_per_hour:
             max_value = left_child
+            AlgoAnalysis.heapsort_comparisons_count += 2
 
         if right_child < length and list_of_pumps[max_value].liter_per_hour < list_of_pumps[right_child].liter_per_hour:
             max_value = right_child
+            AlgoAnalysis.heapsort_comparisons_count += 2
 
         if max_value != root:
             Sort.swap(root, max_value, list_of_pumps)
             Sort.heapify(list_of_pumps, length, max_value)
+            AlgoAnalysis.heapsort_comparisons_count += 1
+
