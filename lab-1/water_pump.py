@@ -13,7 +13,16 @@ class Sort:
 
     @staticmethod
     def insertion_sort(list_of_pumps):
-        """ sorting pumps by power in watts (descending) """
+        """
+        INSERTION SORT
+        DESCENDING
+        Sorting pumps by power in watts
+        :param list_of_pumps: list of water pumps to sort
+        COMPLEXITY: O(n^2)
+            Worst result: O(n^2)
+            Best result: O(n)
+            Average result: O(n^2)
+        """
         length = len(list_of_pumps)
         for obj_position in range(1, length):
             selected_object = list_of_pumps[obj_position]
@@ -27,7 +36,16 @@ class Sort:
 
     @staticmethod
     def heap_sort(list_of_pumps):
-        """ sorting pumps by volume """
+        """
+        HEAPSORT
+        ASCENDING
+        Sorting pumps by volume of water
+        :param list_of_pumps: list of water pumps to sort
+        COMPLEXITY: O(n*log(n))
+            Worst result: O(n^2)
+            Best result: O(n*log(n))
+            Average result: O(n*log(n))
+        """
         length = len(list_of_pumps)
 
         for i in range(length // 2 - 1, -1):
