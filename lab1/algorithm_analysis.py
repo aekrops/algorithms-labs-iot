@@ -15,7 +15,7 @@ class AlgoAnalysis:
         return timeit.timeit(algorithm_name, setup)
 
     @staticmethod
-    def result_view(algorithm_name: str, sorted_list):
+    def result_view(algorithm_name: str):
         print("Name: " + algorithm_name.capitalize())
         print("Time: " + str(AlgoAnalysis.algorithm_time(algorithm_name)))
         if 'insertion' in algorithm_name:
