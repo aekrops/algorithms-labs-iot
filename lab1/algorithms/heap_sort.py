@@ -32,7 +32,7 @@ def heap_sort(list_of_pumps):
     """
     length = len(list_of_pumps)
 
-    for i in range(length, - 1, -1):
+    for i in range(length//2 - 1, - 1, -1):
         heapify(list_of_pumps, length, i)
 
     for i in range(length - 1, 0, -1):
