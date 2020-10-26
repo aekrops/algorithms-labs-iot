@@ -1,8 +1,16 @@
+from lab1.algorithm_analysis import AlgoAnalysis
+
+
 class WaterPump:
     def __init__(self, power_in_watts, brand, liter_per_hour):
         self.power_in_watts = power_in_watts
         self.brand = brand
         self.liter_per_hour = liter_per_hour
+
+    def __str__(self):
+        return '\nBrand: ' + self.brand + \
+                '\nPower in watts: ' + str(self.power_in_watts) + \
+                '\nLiter per hour: ' + str(self.liter_per_hour) + '\n'
 
     def __del__(self):
         pass
@@ -29,9 +37,12 @@ class Sort:
             iteration = obj_position - 1
             while iteration >= 0 and selected_object.power_in_watts > list_of_pumps[iteration].power_in_watts:
                 list_of_pumps[iteration + 1] = list_of_pumps[iteration]
+                AlgoAnalysis.insertion_sort_comparisons_count += 2
+                AlgoAnalysis.insertion_sort_swaps_count += 1
                 iteration -= 1
             else:
                 list_of_pumps[iteration + 1] = selected_object
+                AlgoAnalysis.insertion_sort_swaps_count += 1
         return list_of_pumps
 
     @staticmethod
