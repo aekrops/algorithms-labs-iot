@@ -8,6 +8,7 @@ def heapify(list_of_pumps, length, root):
 
     if left_child < length and list_of_pumps[max_value].liter_per_hour < list_of_pumps[left_child].liter_per_hour:
         max_value = left_child
+        AlgoAnalysis.heapsort_comparisons_count += 2
 
     if right_child < length and list_of_pumps[max_value].liter_per_hour < list_of_pumps[right_child].liter_per_hour:
         max_value = right_child
