@@ -17,6 +17,7 @@ def heapify(list_of_pumps, length, root):
     if max_value != root:
         list_of_pumps[root], list_of_pumps[max_value] = list_of_pumps[max_value], list_of_pumps[root]
         AlgoAnalysis.heapsort_comparisons_count += 1
+        AlgoAnalysis.heapsort_swaps_count += 1
         heapify(list_of_pumps, length, max_value)
 
 
