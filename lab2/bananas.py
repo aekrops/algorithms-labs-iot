@@ -31,7 +31,7 @@ def binary_search(piles, min_speed, max_speed, hours):
     if len(piles) > hours:
         return -1
     average_speed = (min_speed + max_speed) // 2
-    while min_speed < max_speed:
+    if min_speed < max_speed:
         if able_to_eat_in_time(piles, average_speed, hours):
             return binary_search(piles, min_speed, average_speed, hours)
         else:
