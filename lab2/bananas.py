@@ -8,14 +8,16 @@ def find_min_speed_per_hour(piles, hours):
     :param hours: the time it takes for a gorilla to eat bananas
     :return: the minimum speed at which the gorilla can eat all bananas
     """
-    min_speed = 1
     max_speed = 0
+    all_bananas = 0
     for index in range(len(piles)):
+        all_bananas += piles[index]
         if max_speed < piles[index]:
             max_speed = piles[index]
+    optimized_min_speed = all_bananas // hours
     if len(piles) == hours:
         return max_speed
-    return binary_search(piles, min_speed, max_speed, hours)
+    return binary_search(piles, optimized_min_speed, max_speed, hours)
 
 
 def binary_search(piles, min_speed, max_speed, hours):
@@ -65,7 +67,8 @@ class TestTaskMethods(unittest.TestCase):
 
     # testing binary_search method
     def test_binary_search(self):
-        self.assertEqual(binary_search([4, 7, 2, 8, 9], 1, 9, 3), 3)
+        self.assertEqual(binary_search([4, 7, 2, 8, 9], 1, 9, 6), 8)
+        self.assertEqual(binary_search([4, 7, 2, 8, 9], 1, 9, 3), -1)
 
     # testing able_to_eat_in_time method
     def test_capability_to_eat_all(self):
