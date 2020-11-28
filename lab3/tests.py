@@ -1,8 +1,6 @@
 import unittest
-
-from .main import check_result
-from .graph import Graph
-from .gamesrv import dijkstra
+from lab3.algorithm.util.graph import Graph
+from lab3.algorithm.gamesrv import dijkstra, check_result
 import os
 
 test1_in = os.path.join(os.path.dirname(__file__), 'data/gamsrv1.in')
