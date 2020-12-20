@@ -10,6 +10,13 @@ def read_file(file):
         return corridor_of_slabs, columns, rows
 
 
+def check_results(file_in, file_out):
+    result = find_number_of_ways(file_in)
+    with open(file_out, 'r') as f:
+        expected_result = int(f.readline())
+    return result == expected_result
+
+
 def find_number_of_ways(file):
     corridor_of_slabs, columns, rows = read_file(file)
     memoized_path_number = defaultdict(int)
