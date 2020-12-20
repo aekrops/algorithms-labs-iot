@@ -40,9 +40,3 @@ def count_number_of_exits(plates):
 
 if __name__ == '__main__':
     print(find_number_of_ways("data/ijones1.in"))
-    # test = [defaultdict(int) for i in range(5)]
-    # print(test)
-    # aba = [['a', 'a', 'a'], ['c', 'a', 'b'], ['d', 'e', 'f']]
-    # rows = len(aba))
-    # columns = len(aba[0])
-    # print(f'cols {columns}\nrows {rows}')
